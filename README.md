@@ -1,14 +1,13 @@
-Technology Stack
-REST
+## Technology Stack
+   - REST
+   - Swagger
 
-Swagger
+## Individual requirements
+- Build Swagger spec based on the details provided below
 
-Individual requirements
-Build Swagger spec based on the details provided below
+- Make sure to include appropriate models as part of your Swagger
 
-Make sure to include appropriate models as part of your Swagger
-
-Make sure that your Swagger handles error cases for each endpoint as applicable
+- Make sure that your Swagger handles error cases for each endpoint as applicable
 
  
 The scheduling API needs to handle accepting the scheduling request and proposing alternatives when scheduling fails. The basic features are outlined here:
