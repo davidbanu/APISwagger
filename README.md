@@ -123,3 +123,13 @@ Swagger API Specification + ERD Diagram
 
 Any other documents to support your API spec & mapping
 
+
+General Requirements
+- Submission file should be named swagger.yaml
+- App spec should written in OpenAPI 3.0 format.
+- The requests and responses should properly list all fields.
+- For responses, you should cover all the cases, not just 200 status code, like 404
+- Descriptions should be properly written for APIs, request input and responses etc
+- You can use editor.swagger.io for validation.
+- Create some sample body request for each API paths
+
