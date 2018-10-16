@@ -1,135 +1,38 @@
+## Project Background
+The purpose of this mobile application is to allow our Client’s sales associates, to submit ideas using text, photos, videos and audio; search through all ideas to up/down vote them.
+
+Both the mobile app and the server are being developed by Topcoder crowdsourcing community. We earlier ran an architecture challenge targeting the backend development.
+
+In this challenge, we would like to implement the Node.js backend as per the provided architecture.
+ 
 ## Technology Stack
-   - REST
-   - Swagger
+Node.js 8.12
 
-## Individual requirements
-- Build Swagger spec based on the details provided below
+MongoDB
 
-- Make sure to include appropriate models as part of your Swagger
+Express
 
-- Make sure that your Swagger handles error cases for each endpoint as applicable
-
- 
-The scheduling API needs to handle accepting the scheduling request and proposing alternatives when scheduling fails. The basic features are outlined here:
-
-A scheduling request must comply with:
-
-Resource availability: Is the resource working that day and do they not have a reservation during the requested time?
-
-Resource maximum scheduling time: We need to make sure the resource has a 30 minute break during the day not more than 6 hours after the start of their shift
-
-Business hours of location: Is the requested location opened?
-
-Holidays: Is the specific location or all locations closed on this day?
-
-The responses to scheduling request must have success or failure with alternative
-
-If the requested resource, location and time are available we add to the schedule and consider it a success
-
-If the requested resource is not available but another resource is at the requested location we respond with a failure and suggested resource change
-
-Example: “John is not available at the NYC location, but Jane is available at the NYC location at the requested date/time”
-
-If the requested location is closed but another is opened, we respond with a failure and suggested location AND resource change
-
-Example: “The Broadway location is closed, but the 6th street location is opened and Jane is available at the requested date/time”
-
-If there are no available locations and resources we suggest a different day/time when the requested location and resource is next available
-
-Example: “There are no locations open / resources available during this date/time. The next available date/time is with Jane at the 6th Street location on 10/15/2018 at 09:00 AM EDT.”
-
-Potential endpoints:
-
-Schedule:
-
-Resource
-
-Location
-
-Time
-
-Date
-
-Cancel:
-
-Schedule ID
-
-CRUD for:
-
-Resources
-
-Work Schedule
-
-Locations
-
-Business hours
-
-Holidays
-
-Potential data model:
-
-Resources:
-
-Name
-
-Primary Location (FK)
-
-Work Schedule (FK)
-
-Email
-
-Location:
-
-Name
-
-Address
-
-Business Hours (FK)
-
-Phone
-
-Work Schedule:
-
-Day
-
-On/Off
-
-Hours
-
-Business Hours:
-
-OpenTime
-
-CloseTime
-
-DaysOfWeek
-
-Holidays:
-
-Name
-
-Date
-
-Holiday-Location:
-
-Location (FK)
-
-Holiday (FK)
-
- 
-Submit the following
-
-Swagger API Specification + ERD Diagram
-
-Any other documents to support your API spec & mapping
+## Architecture Assets
 
 
-General Requirements
-- Submission file should be named swagger.yaml
-- App spec should written in OpenAPI 3.0 format.
-- The requests and responses should properly list all fields.
-- For responses, you should cover all the cases, not just 200 status code, like 404
-- Descriptions should be properly written for APIs, request input and responses etc
-- You can use editor.swagger.io for validation.
-- Create some sample body request for each API paths
+- Swagger
+- ADS
 
+Screen to API Mapping
+
+Individual requirements
+Implement backend API as per provided Swagger. All endpoints are in scope
+
+Please implement both roles - normal user & admin
+
+## The final version should have:
+
+Zipped Source Code including data model
+
+Postman collection covering positive and negative scenarios
+
+Configuration & Verification Information including deployment to Heroku
+
+Demo video of your submission
+
+Heroku URL for your submission
