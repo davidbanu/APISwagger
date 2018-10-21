@@ -26,7 +26,7 @@ afisareSalariu(salariuBrut, cas, cass, iv, salariuNet);
 
 function afisareSalariu (salariuBrut, cas, cass, iv, salariuNet) {
     $('#ecran-init').html('<p>Salariul brut este: ' + salariuBrut + '</p><br>' +
-    '<p CAS ul este de: ' + cas + '</p><br>' +
+    '<p> CAS ul este de: ' + cas + '</p><br>' +
     '<p> CASS ul este de: ' + cass + '</p><br>' +
     '<p> IV ul este de: ' + iv + '</p><br>' +
     '<p>Salariul net este de: ' + salariuNet + '</p>');
