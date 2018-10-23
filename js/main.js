@@ -60,11 +60,11 @@ $(document).ready(function () {
     function afisareSalariu(salariuBrut, cas, cass, iv, salariuNet) {
 
         $('#ecran-init').html(
-            '<p>Salariul brut este: ' + salariuBrut + '</p><br>' +
-            '<p> CAS ul este de: ' + cas + '</p><br>' +
-            '<p> CASS ul este de: ' + cass + '</p><br>' +
-            '<p> IV ul este de: ' + iv + '</p><br>' +
-            '<p>Salariul net este de: ' + salariuNet + '</p>');
+            '<p class="alert alert-info"><b>Salariul brut</b> ' + salariuBrut + '</p><br>' +
+            '<p> Asigurari Sociale (CAS)' + cas + '</p><br>' +
+            '<p> Asigurari Sociale de Sanatate (CASS) ' + cass + '</p><br>' +
+            '<p> Impozit pe venit (IV) ' + iv + '</p><br>' +
+            '<p class="alert alert-success"><b>Salariul net</b> ' + salariuNet + '</p>');
 
         $('.header').append('<button class="pull-left btn" id="inapoi-button"> Inapoi </button>');
 
