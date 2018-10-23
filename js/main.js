@@ -25,19 +25,20 @@ $(document).ready(function () {
 
     function inputSalariu() {
         var salariu = $("#salariu").val();
-        var scutitImpozit;
 
-        $('.scutit-impozit').on("click", function() {
-            scutitImpozit = $(".scutit-impozit:checked").val();
-            console.warn(scutitImpozit);
-        })
-        
+        var isChecked = $('.scutit-impozit').is(':checked');
+
+        console.warn(isChecked)
 
         if (salariu.trim() === '' || salariu.trim() < 1900) {
             $('#err-salariu').removeClass('hide').addClass('show');
             $('#err-salariu').text('Eroare: Adaugati o valoare valida!')
         }
-        else if (salariu.trim() >= 1900 && (scutitImpozit === 'da' || scutitImpozit === "nu")) {
+        else if (salariu.trim() >= 1900 && isChecked) {
+            var scutitImpozit = $('.scutit-impozit').on("click", function(){
+                return $('.scutitImpozit[name=scutit]:checked').val();
+            });
+            console.warn(scutitImpozit);
             $('#ecran-init').html('');
             calculSalariu(salariu, scutitImpozit);
         }
@@ -46,7 +47,7 @@ $(document).ready(function () {
     function calculSalariu(salariuBrut, scutitImpozit) {
         var cas = (salariuBrut / 100) * 25;
         var cass = (salariuBrut / 100) * 10;
-        if (scutitImpozit){
+        if (scutitImpozit === 'da'){
            var iv = 0; 
         }
         else {
