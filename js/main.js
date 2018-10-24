@@ -13,9 +13,9 @@ $(document).ready(function () {
             '</div>' +
             '<div class="col-md-4"></div>' +
             '</div>' +
-            '<div class="row">' +
-            '<div class="col-md-12 text-center"><h5>Este scutit de impozit?</h5><input type="radio" class="scutit-impozit" name="scutit" value="da"> Da<br><input type="radio" class="scutit-impozit" name="scutit" value="nu"> Nu<br></div>' +
-            '</div>' +
+            // '<div class="row">' +
+            // '<div class="col-md-12 text-center"><h5>Este scutit de impozit?</h5><input type="checkbox" class="scutit-impozit" checked data-toggle="toggle">' +
+            // '</div>' +
             '<button class="btn" id="calc-salary">Calculeaza</button>' +
             '</div>');
         $('#calc-salary').on("click", function () {
@@ -26,33 +26,32 @@ $(document).ready(function () {
     function inputSalariu() {
         var salariu = $("#salariu").val();
 
-        var isChecked = $('.scutit-impozit').is(':checked');
+        // var isChecked = $('.scutit-impozit').is(':checked');
 
-        console.warn(isChecked)
 
         if (salariu.trim() === '' || salariu.trim() < 1900) {
             $('#err-salariu').removeClass('hide').addClass('show');
             $('#err-salariu').text('Eroare: Adaugati o valoare valida!')
         }
-        else if (salariu.trim() >= 1900 && isChecked) {
-            var scutitImpozit = $('.scutit-impozit').on("click", function(){
-                return $('.scutitImpozit[name=scutit]:checked').val();
-            });
-            console.warn(scutitImpozit);
+        else if (salariu.trim() >= 1900) {
+            // var scutitImpozit = $('.scutit-impozit').on("click", function(){
+            //     return $('.scutitImpozit[name=scutit]:checked').val();
+            // });
+            // console.warn(scutitImpozit);
             $('#ecran-init').html('');
-            calculSalariu(salariu, scutitImpozit);
+            calculSalariu(salariu);
         }
     }
 
-    function calculSalariu(salariuBrut, scutitImpozit) {
+    function calculSalariu(salariuBrut) {
         var cas = (salariuBrut / 100) * 25;
         var cass = (salariuBrut / 100) * 10;
-        if (scutitImpozit === 'da'){
-           var iv = 0; 
-        }
-        else {
+        // if (scutitImpozit === 'da'){
+        //    var iv = 0; 
+        // }
+        // else {
             var iv = ((salariuBrut - cas - cass) / 100) * 10;
-        }
+        // }
         var salariuNet = salariuBrut - cas - cass - iv;
         afisareSalariu(salariuBrut, cas, cass, iv, salariuNet);
     }
